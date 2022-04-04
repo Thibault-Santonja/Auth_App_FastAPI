@@ -14,11 +14,8 @@ def get_db():
         db.close()
 
 
-flag = False
 if not database_exists(f"{DB_TYPE}://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"):
-    flag = True
     create_database(f"{DB_TYPE}://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
-
 
 engine = create_engine(f"{DB_TYPE}://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
