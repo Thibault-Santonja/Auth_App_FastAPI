@@ -1,4 +1,3 @@
-from sqlalchemy import Boolean, Column, String, DateTime
 from unittest import TestCase
 
 from server.db.model_user import User
