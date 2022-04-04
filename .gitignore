@@ -130,3 +130,6 @@ dmypy.json
 
 # JetBrains
 /.idea/
+
+# Project
+credentials.json
