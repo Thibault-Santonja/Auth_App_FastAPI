@@ -5,7 +5,7 @@ with open('credentials.json') as json_file:
     credentials = json.load(json_file)
 
 # API settings
-API_HOST = "localhost"
+API_HOST = "0.0.0.0"
 API_PORT = 3200
 API_ROOT = "/api/v1"
 
