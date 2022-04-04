@@ -1,8 +1,12 @@
 import json
 
 
-with open('credentials.json') as json_file:
-    credentials = json.load(json_file)
+try:
+    with open('credentials.json') as json_file:
+        credentials = json.load(json_file)
+except FileNotFoundError:
+    with open('../../credentials.json') as json_file:
+        credentials = json.load(json_file)
 
 # API settings
 API_HOST = "0.0.0.0"
