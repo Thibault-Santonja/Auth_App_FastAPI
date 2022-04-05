@@ -55,7 +55,7 @@ jobs:
         name: "Build"
         command: |
           docker build . --tag thibaultsan/auth-app:latest --label auth-app
-          docker-compose up --force-recreate -d
+          # docker-compose up --force-recreate -d
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
