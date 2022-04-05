@@ -25,8 +25,8 @@ jobs:
       - run:
           name: Test with unittest
           command: |
-            echo "python -m coverage run -m unittest"
-            echo "coverage xml"
+            # python -m coverage run -m unittest
+            # coverage xml
   Flake8:
     docker:
       - image: python:3.10-slim-bullseye
@@ -36,7 +36,7 @@ jobs:
           name: "Install dependencies"
           command: |
             python3.10 -m pip install --upgrade pip
-            pip install -r requirements.txt
+            # pip install -r requirements.txt
       - run:
           name: "Install flake8"
           command: |
