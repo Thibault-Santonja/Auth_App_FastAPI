@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from server.db.db import get_db, SessionLocal
+from server.db.db import get_db
 
 
 class Test(TestCase):

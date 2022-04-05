@@ -38,6 +38,7 @@ test: venv
 		source venv/Scripts/activate; \
 		pip install coverage; \
 		python -m coverage run -m unittest; \
+        coverage xml; \
 		coverage report -m; \
 	)
 
@@ -48,5 +49,6 @@ integrate: test synthax
 ## CD scripts ##
 ################
 build: integrate
-	docker build . --tag thibaultsan/auth-app-FastAPI:latest --label auth-app-fastapi
+	docker build . --tag thibaultsan/auth-app:latest --label auth-app
+	docker-compose up --force-recreate -d
 	# docker scan thibaultsan/auth-app-FastAPI:latest

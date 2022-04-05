@@ -25,3 +25,25 @@ class Test(TestCase):
             "app_name": settings.app_name,
             "admin_email": settings.admin_email
         })
+
+    def test_login_for_access_token_fake_username(self):
+        response = self.client.post(API_ROOT + "/auth/login", data={
+            'username': 'fakeadmin',
+            'password': 'password'
+        })
+        self.assertEqual(response.status_code, 401)
+
+    def test_login_for_access_token_fake_password(self):
+        response = self.client.post(API_ROOT + "/auth/login", data={
+            'username': 'admin',
+            'password': 'fakepassword'
+        })
+        self.assertEqual(response.status_code, 401)
+
+    def test_login_for_access_token(self):
+        response = self.client.post(API_ROOT + "/auth/login", data={
+            'username': 'admin',
+            'password': 'password'
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(response.json().keys()), ["access_token", "token_type"])

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from server.settings.fast_api import *
+from server.settings.fast_api import Settings, APP_NAME, CONTACT_MAIL
 
 
 class TestSettings(TestCase):

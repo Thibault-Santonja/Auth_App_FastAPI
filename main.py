@@ -4,7 +4,7 @@ import uvicorn
 from server.settings.variables import API_HOST, API_PORT, API_ROOT
 from server.settings.fast_api import app
 from server.db.db import engine
-from server.db.model import Base
+from server.db import Base
 from server.api import routes
 
 
