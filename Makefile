@@ -38,6 +38,7 @@ test: venv
 		source venv/Scripts/activate; \
 		pip install coverage; \
 		python -m coverage run -m unittest; \
+        coverage xml; \
 		coverage report -m; \
 	)
 
