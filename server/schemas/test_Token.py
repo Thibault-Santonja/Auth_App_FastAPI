@@ -15,4 +15,3 @@ class Test(TestCase):
         self.assertIsNone(token_data.user_name)
         self.assertIsNone(token_data.is_admin)
         self.assertIsNone(token_data.exp)
-        

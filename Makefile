@@ -48,5 +48,6 @@ integrate: test synthax
 ## CD scripts ##
 ################
 build: integrate
-	docker build . --tag thibaultsan/auth-app-FastAPI:latest --label auth-app-fastapi
+	docker build . --tag thibaultsan/auth-app:latest --label auth-app
+	docker-compose up --force-recreate -d
 	# docker scan thibaultsan/auth-app-FastAPI:latest
